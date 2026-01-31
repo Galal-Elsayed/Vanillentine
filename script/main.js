@@ -243,10 +243,9 @@ const animationTimeline = () => {
       1.5,
       {
         visibility: "visible",
-        opacity: 0,
-        scale: 80,
-        repeat: 3,
-        repeatDelay: 1.4,
+        opacity: 0.8,
+        scale: 1.2, // Gentle scale
+        // Removed repeat and scale: 80
       },
       0.3,
     )
@@ -264,6 +263,22 @@ const animationTimeline = () => {
       },
       "+=1",
     );
+
+  // Music Controls
+  const musicBtn = document.getElementById("musicBtn");
+  const bgMusic = document.getElementById("bgMusic");
+
+  if (musicBtn && bgMusic) {
+    musicBtn.addEventListener("click", () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.innerText = "🔇 Mute";
+      } else {
+        bgMusic.pause();
+        musicBtn.innerText = "🍦 Vanilla Music";
+      }
+    });
+  }
 
   // tl.seek("currentStep");
   // tl.timeScale(2);
