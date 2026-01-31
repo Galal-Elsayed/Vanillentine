@@ -243,9 +243,11 @@ const animationTimeline = () => {
       1.5,
       {
         visibility: "visible",
-        opacity: 0.8,
-        scale: 1.2, // Gentle scale
-        // Removed repeat and scale: 80
+        opacity: 0,
+        scale: 80, // Explosive scale!
+        rotation: 720, // Spin while exploding
+        repeat: 3,
+        repeatDelay: 1.4,
       },
       0.3,
     )
